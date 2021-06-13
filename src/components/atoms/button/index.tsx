@@ -1,8 +1,13 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-const Button: React.FC = ({ children }) => {
+type ButtonTypes = ButtonHTMLAttributes<HTMLElement>;
+interface ButtonProps extends ButtonTypes {
+  children: React.ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, ...restProps }) => {
   return (
-    <button type="submit" className="a-button">
+    <button type="submit" className="a-button" {...restProps}>
       {children}
     </button>
   );
