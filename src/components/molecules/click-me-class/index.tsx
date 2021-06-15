@@ -30,7 +30,6 @@ export class ClickMeClass extends Component<
     };
   }
   componentDidMount() {
-    console.log("mounded", this.props);
     this.props.fetchUsers();
   }
   handleChange = (event: any) => {
