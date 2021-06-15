@@ -30,7 +30,7 @@ const ClickMe = () => {
         onChange={handleChange}
         value={text}
       />
-      <Button onClick={buttonClick}>Click</Button>
+      <Button onClick={buttonClick}>ADD</Button>
       <br />
       {loading ? (
         "Loading users ...."
