@@ -1,10 +1,14 @@
 import React from "react";
 import ClickMe from "components/molecules/click-me";
 import ClickMeClass from "components/molecules/click-me-class";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="p-home">
+      <Link to="/about">
+        <a href="/about">About</a>
+      </Link>
       <h1>Functional component</h1>
       <ClickMe />
       <h1>Class component</h1>
