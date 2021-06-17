@@ -1,14 +1,12 @@
 # BOILERPLATE
 
-<span style="background-color:#050b45;padding:3px;border-radius:3px;color:white">REACT</span>
-<span style="background-color:#050b45;padding:3px;border-radius:3px;color:white">REDUX</span>
-<span style="background-color:#050b45;padding:3px;border-radius:3px;color:white">WEBPACK</span>
-<span style="background-color:#050b45;padding:3px;border-radius:3px;color:white">TYPESCRIPT</span>
-<span style="background-color:#050b45;padding:3px;border-radius:3px;color:white">STORYBOOK</span>
+![REACT](https://place-hold.it/80x33/433/fff?text=REACT&bold)&nbsp;
+![REDUX](https://place-hold.it/80x33/506/fff?text=REDUX&bold)&nbsp;
+![WEBPACK](https://place-hold.it/100x33/042/fff?text=WEBPACK&bold)&nbsp;
+![TYPESCRIPT](https://place-hold.it/130x33/104/fff?text=TYPESCRIPT&bold)&nbsp;
+![STORYBOOK](https://place-hold.it/130x33/411/fff?text=STORYBOOK&bold)&nbsp;
 
 ## FEATURES
-
----
 
 - `redux`
 - `redux-persist`
@@ -25,16 +23,14 @@
 
 ## INSTALLATION
 
----
-
 1. `clone the project`
 2. `cd /project-directory`
 3. `npm install` or `yarn`
 4. `npm start` or `yarn start` for run the project
 5. `npm run storybook` or `yarn storybook` for running the storybook
 
-#### LIVE DEMO
+### LIVE DEMO
 
----
+https://boilerplate-redux-typescript.herokuapp.com/
 
-[https://boilerplate-redux-typescript.herokuapp.com/]
+storybook: https://boilerplate-redux-typescript.herokuapp.com/storybook
