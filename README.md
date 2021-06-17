@@ -6,12 +6,13 @@
 ![TYPESCRIPT](https://place-hold.it/130x33/104/fff?text=TYPESCRIPT&bold)&nbsp;
 ![STORYBOOK](https://place-hold.it/130x33/411/fff?text=STORYBOOK&bold)&nbsp;
 
-## FEATURES
+## What's Included
 
 - `redux`
 - `redux-persist`
 - `redux middleware` \[**Thunk & logger**\]
 - `redux toolkit`
+- `redux devtools extentions`
 - `types for react state, dispatch function (normal and async)`
 - `redux examples` \[How to use **redux state**, **function** (sync and async) both in **functional** and **class** component\]
 - `webpack`
