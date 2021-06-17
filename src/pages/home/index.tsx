@@ -1,7 +1,6 @@
 import React from "react";
 import ClickMe from "components/molecules/click-me";
 import ClickMeClass from "components/molecules/click-me-class";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (

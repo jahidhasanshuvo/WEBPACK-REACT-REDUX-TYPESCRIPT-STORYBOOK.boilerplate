@@ -11,5 +11,5 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-  children: "カードの特長",
+  children: "Click",
 };
