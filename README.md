@@ -16,6 +16,7 @@
 - `types for react state, dispatch function (normal and async)`
 - `redux examples` \[How to use **redux state**, **function** (sync and async) both in **functional** and **class** component\]
 - `webpack`
+- `webpack optimization`
 - `react-router`
 - `storybook`
 - `module sass`
@@ -38,4 +39,5 @@ https://boilerplate-redux-typescript.herokuapp.com/
 storybook: https://boilerplate-redux-typescript.herokuapp.com/storybook
 
 ## License
+
 MIT

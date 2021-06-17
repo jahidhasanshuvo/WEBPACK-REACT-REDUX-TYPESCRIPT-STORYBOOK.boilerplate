@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const globImporter = require("node-sass-glob-importer");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.tsx"),
@@ -56,6 +57,7 @@ module.exports = {
       },
     ],
   },
+
   devServer: {
     historyApiFallback: true,
   },
@@ -63,8 +65,21 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
   ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            negate_iife: false,
+          },
+          output: {
+            comments: false,
+            wrap_iife: true,
+          },
+        },
+      }),
+      new OptimizeCSSAssetsPlugin(),
+    ],
+  },
 };
