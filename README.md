@@ -11,9 +11,10 @@
 - `redux`
 - `redux-persist`
 - `redux middleware` \[**Thunk & logger**\]
+- `redux toolkit`
 - `types for react state, dispatch function (normal and async)`
 - `redux examples` \[How to use **redux state**, **function** (sync and async) both in **functional** and **class** component\]
-- `custom webpack`
+- `webpack`
 - `react-router`
 - `storybook`
 - `module sass`
