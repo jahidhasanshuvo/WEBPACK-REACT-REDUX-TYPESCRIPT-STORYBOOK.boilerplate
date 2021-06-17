@@ -35,3 +35,6 @@
 https://boilerplate-redux-typescript.herokuapp.com/
 
 storybook: https://boilerplate-redux-typescript.herokuapp.com/storybook
+
+## License
+MIT
