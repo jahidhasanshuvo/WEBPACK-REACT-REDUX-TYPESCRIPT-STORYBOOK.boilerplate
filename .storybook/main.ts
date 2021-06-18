@@ -1,6 +1,7 @@
-const path = require("path");
-const globImporter = require("node-sass-glob-importer");
-const TsconfigPathsWebpackPlugin = require("tsconfig-paths-webpack-plugin");
+import "regenerator-runtime/runtime";
+import path from "path";
+import globImporter from "node-sass-glob-importer";
+import TsconfigPathsWebpackPlugin from "tsconfig-paths-webpack-plugin";
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
