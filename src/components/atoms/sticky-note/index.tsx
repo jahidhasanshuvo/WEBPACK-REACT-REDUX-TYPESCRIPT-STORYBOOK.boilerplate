@@ -3,23 +3,14 @@ import { useDispatch } from "react-redux";
 import { removeTodo } from "redux/test/test.slice";
 
 type StickyNoteProps = {
-  modifier: number;
+  modifier: string;
   children: string;
 };
-const modifiers = [
-  "purple",
-  "red",
-  "orange",
-  "blue",
-  "gray",
-  "black",
-  "yellow",
-  "green",
-];
+
 const StickyNote: React.FC<StickyNoteProps> = ({ modifier, children }) => {
   const dispatch = useDispatch();
   return (
-    <div className={`a-sticky-note a-sticky-note--${modifiers[modifier]}`}>
+    <div className={`a-sticky-note a-sticky-note--${modifier}`}>
       {children}
       <button
         type="submit"

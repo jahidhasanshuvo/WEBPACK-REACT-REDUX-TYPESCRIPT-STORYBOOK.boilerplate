@@ -12,7 +12,7 @@
   font-weight: bold;
   padding: 30px 10px 10px 10px;
   box-shadow: 0px 5px 5px gray;
-  transition: all 0.3s;
+  transition: all 1s;
   word-break: break-all;
   &__unpin {
     background: radial-gradient(circle, rgb(252, 204, 212), rgb(51, 14, 14));
@@ -38,50 +38,66 @@
   }
   &--purple {
     background: rgb(97, 21, 107);
-    transform: rotateZ(-5deg);
-    top: 80px;
-    left: 5%;
   }
   &--red {
     background: rgb(88, 45, 45);
-    transform: rotateZ(5deg);
-    top: 80px;
-    left: 30%;
   }
   &--orange {
     background: rgb(248, 165, 40);
-    transform: rotateZ(-5deg);
-    top: 80px;
-    left: 55%;
   }
   &--blue {
     background: rgb(71, 72, 128);
-    transform: rotateZ(5deg);
-    top: 80px;
-    left: 80%;
   }
   &--gray {
     background: rgb(97, 102, 97);
-    transform: rotateZ(5deg);
-    top: 460px;
-    left: 5%;
   }
   &--black {
     background: rgb(36, 39, 36);
-    transform: rotateZ(-5deg);
-    top: 460px;
-    left: 30%;
   }
   &--yellow {
     background: rgb(192, 169, 67);
-    transform: rotateZ(5deg);
-    top: 460px;
-    left: 55%;
   }
   &--green {
     background: rgb(77, 117, 77);
-    transform: rotateZ(-5deg);
+  }
+  &:nth-of-type(1) {
+    top: 80px;
+    left: 5%;
+    transform: rotate(25deg);
+  }
+  &:nth-of-type(2) {
+    top: 80px;
+    left: 30%;
+    transform: rotate(-7deg);
+  }
+  &:nth-of-type(3) {
+    top: 80px;
+    left: 55%;
+    transform: rotate(10deg);
+  }
+  &:nth-of-type(4) {
+    top: 80px;
+    left: 80%;
+    transform: rotate(-17deg);
+  }
+  &:nth-of-type(5) {
+    top: 460px;
+    left: 5%;
+    transform: rotate(-5deg);
+  }
+  &:nth-of-type(6) {
+    top: 460px;
+    left: 30%;
+    transform: rotate(17deg);
+  }
+  &:nth-of-type(7) {
+    top: 460px;
+    left: 55%;
+    transform: rotate(-7deg);
+  }
+  &:nth-of-type(8) {
     top: 460px;
     left: 80%;
+    transform: rotate(7deg);
   }
 }

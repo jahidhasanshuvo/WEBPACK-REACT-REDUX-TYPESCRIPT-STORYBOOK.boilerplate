@@ -2,7 +2,8 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppDispatch, AppThunk } from "redux/store";
 
 export interface TestProps {
-  todos: string[];
+  todos: any[];
+  modifiers: string[];
   loading: boolean;
   quotes: any;
   error: boolean;
@@ -11,6 +12,16 @@ export interface TestProps {
 
 export const initialState: TestProps = {
   todos: [],
+  modifiers: [
+    "purple",
+    "red",
+    "orange",
+    "blue",
+    "gray",
+    "black",
+    "yellow",
+    "green",
+  ],
   loading: false,
   quotes: {},
   error: false,
@@ -34,10 +45,18 @@ export const testSlice = createSlice({
   initialState,
   reducers: {
     addToDo: (state, action: PayloadAction<string>) => {
-      state.todos.push(action.payload);
+      const color = state.modifiers.pop();
+      state.todos.push({
+        todo: action.payload,
+        color: color,
+      });
     },
-    removeTodo: (state, action: PayloadAction<number>) => {
-      state.todos.splice(action.payload, 1);
+    removeTodo: (state, action: PayloadAction<string>) => {
+      const index = state.todos.findIndex(
+        (todo) => todo.color == action.payload
+      );
+      state.modifiers.push(action.payload);
+      state.todos.splice(index, 1);
     },
   },
   extraReducers: {
@@ -58,7 +77,16 @@ export const testSlice = createSlice({
   },
 });
 export const { addToDo, removeTodo } = testSlice.actions;
-
+const modifiers = [
+  "purple",
+  "red",
+  "orange",
+  "blue",
+  "gray",
+  "black",
+  "yellow",
+  "green",
+];
 //  without asyncThunk. No need for extraReducers
 
 // export const fetchquotes = (): AppThunk => async (dispatch: AppDispatch) => {

@@ -15,7 +15,6 @@ const ClickMe = () => {
   const [text, setText] = useState("");
   const ref = useRef<HTMLInputElement>(null);
   const buttonClick = useCallback(() => {
-    console.log(text.length);
     if (text.length < 1) {
       alert("Type Something");
     } else if (todos.length < 8) {
@@ -55,14 +54,15 @@ const ClickMe = () => {
         maxLength={50}
       />
       <Button onClick={buttonClick} />
-      {todos.map((todo, index) => {
-        return (
-          <StickyNote modifier={index} key={index}>
-            {todo}
-          </StickyNote>
-        );
-      })}
-      <br />
+      <div className="m-click-me__board">
+        {todos.map(({ todo, color }) => {
+          return (
+            <StickyNote modifier={color} key={color}>
+              {todo}
+            </StickyNote>
+          );
+        })}
+      </div>
       <div className="m-click-me__quotes">
         {loading ? (
           "Loading quotes ...."
