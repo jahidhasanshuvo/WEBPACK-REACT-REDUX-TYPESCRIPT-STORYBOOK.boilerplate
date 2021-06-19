@@ -40,7 +40,7 @@ export const fetchquotes = createAsyncThunk("test/fetchquotes", async () => {
   }
 });
 
-export const testSlice = createSlice({
+export const todoSlice = createSlice({
   name: "test",
   initialState,
   reducers: {
@@ -76,7 +76,7 @@ export const testSlice = createSlice({
     },
   },
 });
-export const { addToDo, removeTodo } = testSlice.actions;
+export const { addToDo, removeTodo } = todoSlice.actions;
 const modifiers = [
   "purple",
   "red",

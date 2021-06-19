@@ -1,5 +1,5 @@
 // import React, { Component } from "react";
-// import { testSelector } from "redux/test/test.selector";
+// import { todoSelector } from "redux/test/test.selector";
 // import { RootState } from "redux/root.reducer";
 // import { connect } from "react-redux";
 // import Input from "components/atoms/input";
@@ -81,7 +81,7 @@
 //   }
 // }
 // const mapStateToProps = (state: RootState) => ({
-//   test: testSelector(state),
+//   test: todoSelector(state),
 // });
 // const mapDispatchToProps = {
 //   increment,

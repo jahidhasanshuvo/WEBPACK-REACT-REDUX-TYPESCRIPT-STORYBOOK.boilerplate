@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeTodo } from "redux/test/test.slice";
+import { removeTodo } from "redux/todo/todo.slice";
 
 type StickyNoteProps = {
   modifier: string;

@@ -1,13 +1,13 @@
 import React from "react";
-import ClickMe from "components/molecules/click-me";
+import ClickMe from "components/molecules/todo";
 // import ClickMeClass from "components/molecules/click-me-class-component";
 
 const Home = () => {
   return (
     <div className="p-home">
-      {/* <h1>Functional component</h1> */}
+      {/* Functional component  */}
       <ClickMe />
-      {/* <h1>Class component</h1> */}
+      {/* Class component */}
       {/* <ClickMeClass /> */}
     </div>
   );

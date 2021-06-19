@@ -2,15 +2,15 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import Input from "components/atoms/input";
 import Button from "components/atoms/button";
 import { useSelector } from "react-redux";
-import { testSelector } from "redux/test/test.selector";
+import { todoSelector } from "redux/todo/todo.selector";
 import { UseAppDispatch } from "redux/store";
-import { addToDo, fetchquotes } from "redux/test/test.slice";
+import { addToDo, fetchquotes } from "redux/todo/todo.slice";
 import StickyNote from "components/atoms/sticky-note";
 
-const ClickMe = () => {
+const Todo = () => {
   const dispatch = UseAppDispatch();
   const { todos, quotes, loading, error, errorMessage } = useSelector(
-    testSelector
+    todoSelector
   );
   const [text, setText] = useState("");
   const ref = useRef<HTMLInputElement>(null);
@@ -79,4 +79,4 @@ const ClickMe = () => {
   );
 };
 
-export default ClickMe;
+export default Todo;
