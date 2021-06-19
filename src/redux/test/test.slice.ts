@@ -4,7 +4,7 @@ import { AppDispatch, AppThunk } from "redux/store";
 export interface TestProps {
   todos: string[];
   loading: boolean;
-  users: any[];
+  quotes: any;
   error: boolean;
   errorMessage: string;
 }
@@ -12,18 +12,18 @@ export interface TestProps {
 export const initialState: TestProps = {
   todos: [],
   loading: false,
-  users: [],
+  quotes: {},
   error: false,
   errorMessage: "",
 };
 
 // asyncThunk generate three extraReducers
-export const fetchUsers = createAsyncThunk("test/fetchUsers", async () => {
+export const fetchquotes = createAsyncThunk("test/fetchquotes", async () => {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const response = await fetch("https://type.fit/api/quotes");
     const data = await response.json();
     // await new Promise((r) => setTimeout(r, 2000));
-    return data;
+    return data[Math.floor(Math.random() * 1640)];
   } catch (error) {
     return error;
   }
@@ -41,14 +41,14 @@ export const testSlice = createSlice({
     },
   },
   extraReducers: {
-    [fetchUsers.pending.type]: (state, action) => {
+    [fetchquotes.pending.type]: (state, action) => {
       state.loading = true;
       state.error = false;
       state.errorMessage = "";
     },
-    [fetchUsers.fulfilled.type]: (state, action) => {
-      if (action.payload.length) {
-        state.users = action.payload;
+    [fetchquotes.fulfilled.type]: (state, action) => {
+      if (action.payload.hasOwnProperty("text")) {
+        state.quotes = action.payload;
       } else {
         state.error = true;
         state.errorMessage = "" + action.payload + "";
@@ -61,7 +61,7 @@ export const { addToDo, removeTodo } = testSlice.actions;
 
 //  without asyncThunk. No need for extraReducers
 
-// export const fetchUsers = (): AppThunk => async (dispatch: AppDispatch) => {
+// export const fetchquotes = (): AppThunk => async (dispatch: AppDispatch) => {
 //   try {
 //     dispatch(setLoading(true));
 //     const response = await fetch("https://jsonplaceholder.typicode.com/users");

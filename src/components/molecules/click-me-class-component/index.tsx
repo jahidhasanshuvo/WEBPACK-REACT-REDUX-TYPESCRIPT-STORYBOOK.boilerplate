@@ -7,7 +7,7 @@
 // import {
 //   increment,
 //   decrement,
-//   fetchUsers,
+//   fetchquotes,
 //   TestProps,
 // } from "redux/test/test.slice";
 
@@ -30,7 +30,7 @@
 //     };
 //   }
 //   componentDidMount() {
-//     this.props.fetchUsers();
+//     this.props.fetchquotes();
 //   }
 //   handleChange = (event: any) => {
 //     this.setState({
@@ -85,7 +85,7 @@
 // });
 // const mapDispatchToProps = {
 //   increment,
-//   fetchUsers,
+//   fetchquotes,
 // };
 // export default connect(
 //   mapStateToProps,

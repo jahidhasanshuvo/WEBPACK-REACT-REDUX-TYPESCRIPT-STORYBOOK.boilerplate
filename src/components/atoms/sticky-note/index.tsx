@@ -7,14 +7,14 @@ type StickyNoteProps = {
   children: string;
 };
 const modifiers = [
-  "green",
+  "purple",
   "red",
-  "yellow",
+  "orange",
   "blue",
   "gray",
   "black",
-  "orange",
-  "purple",
+  "yellow",
+  "green",
 ];
 const StickyNote: React.FC<StickyNoteProps> = ({ modifier, children }) => {
   const dispatch = useDispatch();

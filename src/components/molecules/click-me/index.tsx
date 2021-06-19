@@ -4,12 +4,12 @@ import Button from "components/atoms/button";
 import { useSelector } from "react-redux";
 import { testSelector } from "redux/test/test.selector";
 import { UseAppDispatch } from "redux/store";
-import { addToDo, fetchUsers } from "redux/test/test.slice";
+import { addToDo, fetchquotes } from "redux/test/test.slice";
 import StickyNote from "components/atoms/sticky-note";
 
 const ClickMe = () => {
   const dispatch = UseAppDispatch();
-  const { todos, users, loading, error, errorMessage } = useSelector(
+  const { todos, quotes, loading, error, errorMessage } = useSelector(
     testSelector
   );
 
@@ -26,7 +26,7 @@ const ClickMe = () => {
     setText(event.target.value);
   };
   useEffect(() => {
-    dispatch(fetchUsers());
+    dispatch(fetchquotes());
   }, []);
   return (
     <div className="m-click-me">
@@ -46,28 +46,18 @@ const ClickMe = () => {
         );
       })}
       <br />
-      {/* {loading ? (
-        "Loading users ...."
-      ) : error ? (
-        <h1>{errorMessage}</h1>
-      ) : (
-        <table>
-          <thead>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>USERNAME</th>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )} */}
+      <div className="m-click-me__quotes">
+        {loading ? (
+          "Loading quotes ...."
+        ) : error ? (
+          <p>{errorMessage}</p>
+        ) : (
+          <>
+            <p className="m-click-me__quotes-text">{quotes.text}</p>
+            <p className="m-click-me__author">{quotes.author}</p>
+          </>
+        )}
+      </div>
     </div>
   );
 };
