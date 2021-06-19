@@ -7,7 +7,6 @@
     width: 400px;
     border: 2px solid #ffa8ba;
     border-radius: 60px;
-    // background: linear-gradient(to right, rgb(247, 240, 240), white);
     padding: 0 30px;
     box-shadow: 10px 10px 10px #eec8d0;
     font-size: 20px;
@@ -33,5 +32,13 @@
     transition: all 0.5s;
     letter-spacing: 8px;
     text-transform: uppercase;
+  }
+  &--has-input {
+    #{$root}__label {
+      font-size: 10px;
+      top: 10px;
+      left: 20px;
+      letter-spacing: 2px;
+    }
   }
 }

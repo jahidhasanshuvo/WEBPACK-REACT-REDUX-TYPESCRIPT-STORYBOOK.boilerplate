@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Input from "components/atoms/input";
 import Button from "components/atoms/button";
 import { useSelector } from "react-redux";
@@ -12,25 +12,42 @@ const ClickMe = () => {
   const { todos, quotes, loading, error, errorMessage } = useSelector(
     testSelector
   );
-
   const [text, setText] = useState("");
-  const buttonClick = () => {
-    if (todos.length < 8) {
+  const ref = useRef<HTMLInputElement>(null);
+  const buttonClick = useCallback(() => {
+    console.log(text.length);
+    if (text.length < 1) {
+      alert("Type Something");
+    } else if (todos.length < 8) {
       dispatch(addToDo(text));
     } else {
       alert("complete them first");
     }
     setText("");
-  };
+  }, [text]);
   const handleChange = (event: any) => {
     setText(event.target.value);
   };
+  useEffect(() => {
+    const listner = (e: any) => {
+      ref.current?.focus();
+      const key = e.key;
+      if (key == "Enter") {
+        buttonClick();
+      }
+    };
+    document.addEventListener("keydown", listner);
+    return () => {
+      document.removeEventListener("keydown", listner);
+    };
+  }, [text]);
   useEffect(() => {
     dispatch(fetchquotes());
   }, []);
   return (
     <div className="m-click-me">
       <Input
+        ref={ref}
         type="text"
         placeholder="type todos"
         onChange={handleChange}
