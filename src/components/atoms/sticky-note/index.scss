@@ -1,0 +1,92 @@
+.a-sticky-note {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 30px 10px 10px 10px;
+  box-shadow: 0px 5px 5px gray;
+  transition: all 0.3s;
+  word-break: break-all;
+  &__unpin {
+    background: radial-gradient(circle, rgb(252, 204, 212), rgb(51, 14, 14));
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    color: black;
+    border: none;
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    top: 5px;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 5px 5px 8px rgb(44, 44, 44);
+      cursor: pointer;
+    }
+  }
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 15px 15px gray;
+  }
+  &--green {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(-5deg);
+    top: 50px;
+    left: 5%;
+  }
+  &--red {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(5deg);
+    top: 50px;
+    left: 30%;
+  }
+  &--yellow {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(-5deg);
+    top: 50px;
+    left: 55%;
+  }
+  &--blue {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(5deg);
+    top: 50px;
+    left: 80%;
+  }
+  &--gray {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(5deg);
+    top: 450px;
+    left: 5%;
+  }
+  &--black {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(-5deg);
+    top: 450px;
+    left: 30%;
+  }
+  &--orange {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(5deg);
+    top: 450px;
+    left: 55%;
+  }
+  &--purple {
+    position: absolute;
+    background: rgb(95, 109, 95);
+    transform: rotateZ(-5deg);
+    top: 450px;
+    left: 80%;
+  }
+}

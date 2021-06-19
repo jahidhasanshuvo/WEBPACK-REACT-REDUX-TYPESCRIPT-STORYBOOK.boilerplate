@@ -1,16 +1,9 @@
 import React, { ButtonHTMLAttributes } from "react";
 
-type ButtonTypes = ButtonHTMLAttributes<HTMLElement>;
-export interface ButtonProps extends ButtonTypes {
-  children: React.ReactNode;
-}
+export type ButtonTypes = ButtonHTMLAttributes<HTMLElement>;
 
-const Button: React.FC<ButtonProps> = ({ children, ...restProps }) => {
-  return (
-    <button type="submit" className="a-button" {...restProps}>
-      {children}
-    </button>
-  );
+const Button: React.FC<ButtonTypes> = ({ children, ...restProps }) => {
+  return <button type="submit" className="a-button" {...restProps} />;
 };
 
 export default Button;

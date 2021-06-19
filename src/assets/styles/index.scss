@@ -1,7 +1,11 @@
+@import "../../pages/**/*.scss";
+@import "../../components/**/**/*.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-@import "../../pages/**/*.scss";
-@import "../../components/**/**/*.scss";
+body {
+  font-family: "shadows into light";
+  background: radial-gradient(white 40%, #ffdee4);
+}

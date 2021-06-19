@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppDispatch, AppThunk } from "redux/store";
 
 export interface TestProps {
-  clicked: number;
+  todos: string[];
   loading: boolean;
   users: any[];
   error: boolean;
@@ -10,7 +10,7 @@ export interface TestProps {
 }
 
 export const initialState: TestProps = {
-  clicked: 0,
+  todos: [],
   loading: false,
   users: [],
   error: false,
@@ -33,11 +33,11 @@ export const testSlice = createSlice({
   name: "test",
   initialState,
   reducers: {
-    increment: (state, action: PayloadAction<number>) => {
-      state.clicked += action.payload;
+    addToDo: (state, action: PayloadAction<string>) => {
+      state.todos.push(action.payload);
     },
-    decrement: (state, action: PayloadAction<number>) => {
-      state.clicked -= action.payload;
+    removeTodo: (state, action: PayloadAction<number>) => {
+      state.todos.splice(action.payload, 1);
     },
   },
   extraReducers: {
@@ -57,7 +57,7 @@ export const testSlice = createSlice({
     },
   },
 });
-export const { increment, decrement } = testSlice.actions;
+export const { addToDo, removeTodo } = testSlice.actions;
 
 //  without asyncThunk. No need for extraReducers
 

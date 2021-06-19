@@ -4,35 +4,49 @@ import Button from "components/atoms/button";
 import { useSelector } from "react-redux";
 import { testSelector } from "redux/test/test.selector";
 import { UseAppDispatch } from "redux/store";
-import { increment, decrement, fetchUsers } from "redux/test/test.slice";
+import { addToDo, fetchUsers } from "redux/test/test.slice";
+import StickyNote from "components/atoms/sticky-note";
 
 const ClickMe = () => {
   const dispatch = UseAppDispatch();
-  const { clicked, users, loading, error, errorMessage } =
-    useSelector(testSelector);
+  const { todos, users, loading, error, errorMessage } = useSelector(
+    testSelector
+  );
 
-  const [text, setText] = useState(0);
+  const [text, setText] = useState("");
   const buttonClick = () => {
-    dispatch(increment(text));
+    if (todos.length < 8) {
+      dispatch(addToDo(text));
+    } else {
+      alert("complete them first");
+    }
+    setText("");
   };
   const handleChange = (event: any) => {
-    setText(parseInt(event.target.value));
+    setText(event.target.value);
   };
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
   return (
     <div className="m-click-me">
-      <h3>Clicked {clicked}</h3>
       <Input
         type="text"
-        placeholder="type here"
+        placeholder="type todos"
         onChange={handleChange}
         value={text}
+        maxLength={50}
       />
-      <Button onClick={buttonClick}>ADD</Button>
+      <Button onClick={buttonClick} />
+      {todos.map((todo, index) => {
+        return (
+          <StickyNote modifier={index} key={index}>
+            {todo}
+          </StickyNote>
+        );
+      })}
       <br />
-      {loading ? (
+      {/* {loading ? (
         "Loading users ...."
       ) : error ? (
         <h1>{errorMessage}</h1>
@@ -53,7 +67,7 @@ const ClickMe = () => {
             ))}
           </tbody>
         </table>
-      )}
+      )} */}
     </div>
   );
 };

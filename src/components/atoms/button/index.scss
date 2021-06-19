@@ -1,7 +1,31 @@
 .a-button {
-  height: 30px;
-  width: 150px;
-  background: url("assets/image/scenery.jpeg");
-  border-radius: 50px;
+  $root: &;
+  height: 50px;
+  width: 50px;
+  z-index: 9;
+  // background: url("assets/image/scenery.jpeg");
+  border-radius: 20px;
   color: white;
+  border: 2px solid rgb(247, 128, 148);
+  background: transparent;
+  color: rgb(138, 45, 45);
+  overflow: hidden;
+  font-size: 40px;
+  transition: all 0.5s;
+  position: relative;
+  &::after {
+    content: "+";
+    position: absolute;
+    top: 2px;
+    left: 12px;
+    transition: all 0.5s;
+  }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 2px 5px 10px rgb(170, 122, 129);
+  }
+  &:hover::after {
+    transform: rotate(720deg);
+  }
 }

@@ -4,7 +4,7 @@ import Home from "pages/home";
 import { Link, Route, Switch } from "react-router-dom";
 const Routes = () => (
   <>
-    <header>
+    {/* <header>
       <li>
         <Link to="/">
           <a href="/">Home</a>
@@ -15,7 +15,7 @@ const Routes = () => (
           <a href="/about">About</a>
         </Link>
       </li>
-    </header>
+    </header> */}
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/about">
