@@ -1,6 +1,6 @@
 import React from "react";
 import ClickMe from "components/molecules/todo";
-// import ClickMeClass from "components/molecules/click-me-class-component";
+import ClickMeClass from "components/molecules/todo-class-component";
 
 const Home = () => {
   return (

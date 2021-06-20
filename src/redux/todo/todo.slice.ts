@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { AppDispatch, AppThunk } from "redux/store";
 
-export interface TestProps {
+export interface TodoProps {
   todos: any[];
   modifiers: string[];
   loading: boolean;
@@ -10,7 +10,7 @@ export interface TestProps {
   errorMessage: string;
 }
 
-export const initialState: TestProps = {
+export const initialState: TodoProps = {
   todos: [],
   modifiers: [
     "purple",
@@ -29,7 +29,7 @@ export const initialState: TestProps = {
 };
 
 // asyncThunk generate three extraReducers
-export const fetchquotes = createAsyncThunk("test/fetchquotes", async () => {
+export const fetchquotes = createAsyncThunk("todo/fetchquotes", async () => {
   try {
     const response = await fetch("https://type.fit/api/quotes");
     const data = await response.json();
@@ -41,7 +41,7 @@ export const fetchquotes = createAsyncThunk("test/fetchquotes", async () => {
 });
 
 export const todoSlice = createSlice({
-  name: "test",
+  name: "todo",
   initialState,
   reducers: {
     addToDo: (state, action: PayloadAction<string>) => {
@@ -77,16 +77,6 @@ export const todoSlice = createSlice({
   },
 });
 export const { addToDo, removeTodo } = todoSlice.actions;
-const modifiers = [
-  "purple",
-  "red",
-  "orange",
-  "blue",
-  "gray",
-  "black",
-  "yellow",
-  "green",
-];
 //  without asyncThunk. No need for extraReducers
 
 // export const fetchquotes = (): AppThunk => async (dispatch: AppDispatch) => {

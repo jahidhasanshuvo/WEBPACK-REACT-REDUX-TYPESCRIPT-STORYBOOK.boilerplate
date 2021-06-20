@@ -14,7 +14,7 @@
 - `redux toolkit`
 - `redux devtools extentions`
 - `types for react state, dispatch function (normal and async)`
-- `redux examples` \[How to use **redux state**, **function** (sync and async) both in **functional** and **class** component\]
+- `redux examples for simple todo` \[How to use **redux state**, **function** (sync and async) both in **functional** and **class** component\]
 - `webpack`
 - `webpack optimization`
 - `react-router`

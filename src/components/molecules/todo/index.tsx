@@ -44,7 +44,7 @@ const Todo = () => {
     dispatch(fetchquotes());
   }, []);
   return (
-    <div className="m-click-me">
+    <div className="m-todo">
       <Input
         ref={ref}
         type="text"
@@ -54,7 +54,7 @@ const Todo = () => {
         maxLength={50}
       />
       <Button onClick={buttonClick} />
-      <div className="m-click-me__board">
+      <div className="m-todo__board">
         {todos.map(({ todo, color }) => {
           return (
             <StickyNote modifier={color} key={color}>
@@ -63,15 +63,15 @@ const Todo = () => {
           );
         })}
       </div>
-      <div className="m-click-me__quotes">
+      <div className="m-todo__quotes">
         {loading ? (
           "Loading quotes ...."
         ) : error ? (
           <p>{errorMessage}</p>
         ) : (
           <>
-            <p className="m-click-me__quotes-text">{quotes.text}</p>
-            <p className="m-click-me__author">{quotes.author}</p>
+            <p className="m-todo__quotes-text">{quotes.text}</p>
+            <p className="m-todo__author">{quotes.author}</p>
           </>
         )}
       </div>
