@@ -61,11 +61,11 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
+  // plugins: [
+  //   new HtmlWebPackPlugin({
+  //     template: "./src/index.html",
+  //   }),
+  // ],
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -79,7 +79,10 @@ module.exports = {
           },
         },
       }),
-      // new OptimizeCSSAssetsPlugin(),
+      new OptimizeCSSAssetsPlugin(),
+      new HtmlWebPackPlugin({
+        template: "./src/index.html",
+      }),
     ],
   },
 };
