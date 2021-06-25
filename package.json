@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0 <15.0.0"
+  },
   "scripts": {
     "start": "NODE_ENV=development NODE_STAGE=dev webpack serve --config webpack.config.ts --open --hot",
     "build": "webpack --mode=production",
