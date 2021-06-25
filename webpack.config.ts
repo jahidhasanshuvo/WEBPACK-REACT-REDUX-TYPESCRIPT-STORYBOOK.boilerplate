@@ -1,8 +1,8 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const globImporter = require("node-sass-glob-importer");
-const TerserPlugin = require("terser-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+import path from "path";
+import HtmlWebPackPlugin from "html-webpack-plugin";
+import globImporter from "node-sass-glob-importer";
+import TerserPlugin from "terser-webpack-plugin";
+import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.tsx"),
@@ -79,7 +79,7 @@ module.exports = {
           },
         },
       }),
-      new OptimizeCSSAssetsPlugin(),
+      // new OptimizeCSSAssetsPlugin(),
     ],
   },
 };
