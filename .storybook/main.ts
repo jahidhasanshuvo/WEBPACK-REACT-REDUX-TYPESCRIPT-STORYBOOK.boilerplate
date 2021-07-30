@@ -8,7 +8,7 @@ module.exports = {
   typescript: {
     reactDocgen: "none",
   },
-  webpackFinal: async (config) => {
+  webpackFinal: async (config: any) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       assets: path.resolve(__dirname, "../src/assets"),
