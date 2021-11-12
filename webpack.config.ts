@@ -3,17 +3,26 @@ import HtmlWebPackPlugin from "html-webpack-plugin";
 import globImporter from "node-sass-glob-importer";
 import TerserPlugin from "terser-webpack-plugin";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "index.js",
+    filename: "build.js",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     modules: [path.resolve(__dirname, "src"), "node_modules"],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "index.css",
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -38,7 +47,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
+          // "style-loader",
           "css-loader",
           {
             loader: "sass-loader",
@@ -61,11 +71,6 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
   optimization: {
     minimizer: [
       new TerserPlugin({
